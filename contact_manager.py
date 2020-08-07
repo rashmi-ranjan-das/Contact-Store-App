@@ -18,8 +18,6 @@ while 1:
         break
     elif choice < 1 or choice > 8:
         print('Invalid Choice')
-        print('Exiting App...')
-        break
     else:
         if choice == 1:
             name = input('Enter Contact Name : ')
@@ -28,49 +26,49 @@ while 1:
             category = input('Enter Contact Category : ')
             print()
             input_handle.add_contact(db,'Contact_Store',name=name,number=number,email=email,category=category)
-            continue
+            
 
-        if choice == 2:
+        elif choice == 2:
             name = input('Enter Contact Name to delete : ')
             print()
             database_handle.delete_contact(db,'Contact_Store',name)
-            continue
+            
 
-        if choice == 3:
+        elif choice == 3:
             database_handle.edit_contact(db,'Contact_Store')
-            continue
+            
 
-        if choice == 4:
+        elif choice == 4:
             ctr = database_handle.show_all_contacts(db,'Contact_Store')
             if ctr == 0:
                 print('No Contacts are stored yet...')
                 print()
-            continue
+            
 
-        if choice == 5:
+        elif choice == 5:
             name = input('Enter Contact Name to search : ')
             print()
             val = database_handle.search_contact_by_name(db,'Contact_Store',name)
             if val == 1:
                 print('Contact Doesnt Exist...')
                 print()
-            continue
+            
 
-        if choice == 6:
+        elif choice == 6:
             number = input('Enter Contact Number to search : ')
             print()
             val = database_handle.search_contact_by_number(db,'Contact_Store',number)
             if val == 1:
                 print('Contact Doesnt Exist')
                 print()
-            continue
+            
 
-        if choice == 7:
+        elif choice == 7:
             category = input('Enter Contact Category to search : ')
             print()
             val = database_handle.search_contact_by_category(db,'Contact_Store',category)
             if val == 1:
                 print('Contact Doesnt Exist')
                 print()
-            continue
+          
             
