@@ -41,7 +41,7 @@ def delete_contact(db,table,name):
 
 def edit_contact(db,table):
     ch = input('Do you want to edit contact by Number (Enter NU) or by Name (Enter NA) ? : ')
-    if ch == 'NU' or ch == 'Nu' or ch == 'nU' or ch == 'nu':
+    if ch.lower() == 'nu':
         cur = db.cursor()
         number = input('Enter Contact Number : ')
         ctr = search_contact_for_edit_by_number(db,'Contact_Store',number)
@@ -78,7 +78,7 @@ def edit_contact(db,table):
             else:
                 print('Invalid Choice...')
                 print()
-    elif ch == 'NA' or ch == 'Na' or ch == 'nA' or ch == 'na':
+    elif ch.lower() == 'na':
         cur = db.cursor()
         name = input('Enter Contact Name : ')
         ctr = search_contact_for_edit_by_name(db,'Contact_Store',name)
